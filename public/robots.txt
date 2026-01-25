@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://calculadoraintereses.com/sitemap-index.xml
