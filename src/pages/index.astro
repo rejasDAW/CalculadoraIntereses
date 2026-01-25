@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Calculator from '../components/Calculator.astro';
+import AffiliateGrid from '../components/AffiliateGrid.astro';
+import FAQ from '../components/FAQ.astro';
+import Glossary from '../components/Glossary.astro';
+---
+
+<Layout title="Calculadora Financiera: Hipoteca vs Inversión - Simulador 2026">
+	<div class="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-blue-50 to-transparent pointer-events-none z-0"></div>
+
+	<main class="min-h-screen pb-12 relative z-10">
+		<!-- HERO SECTION: Premium Fintech Style -->
+		<section class="pt-8 pb-12 md:pt-12 md:pb-16 px-4 md:px-6 relative">
+            <div class="container mx-auto max-w-5xl text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white border border-blue-100 shadow-sm mb-6 animate-fade-in-up">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    <span class="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest">Algoritmo Actualizado 2026</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-heading font-bold text-slate-900 mb-4 md:mb-6 leading-tight tracking-tight">
+					Tu dinero puede <br class="hidden md:block" />
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-emerald-500">
+                        rendir mucho más.
+                    </span>
+				</h1>
+				
+                <p class="text-base md:text-lg text-slate-500 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto font-medium px-4">
+					La herramienta definitiva para decidir matemáticamente entre <strong class="text-slate-800">amortizar hipoteca</strong> o <strong class="text-slate-800">invertir</strong> capital. Sin opiniones, solo números.
+				</p>
+			</div>
+		</section>
+
+		<!-- CALCULATOR SECTION -->
+		<section class="container mx-auto px-4 lg:px-6 -mt-8 relative z-20">
+			<Calculator />
+		</section>
+
+        <!-- MONETIZATION SECTION -->
+        <section class="mt-16 mb-16 relative overflow-hidden">
+            <div class="absolute inset-0 bg-slate-900 md:skew-y-3 transform origin-top-left -z-10 h-full w-full"></div>
+            <div class="container mx-auto px-4 py-8 md:px-6 md:py-10">
+                 <AffiliateGrid />
+            </div>
+        </section>
+
+        <!-- CONTENT SECTION: Cards Style -->
+        <section class="container mx-auto px-6 max-w-4xl pb-16 relative z-20">
+           <div class="text-center mb-10">
+                <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">¿Cómo funciona la lógica?</h2>
+                <p class="text-slate-500">Dos caminos para tu libertad financiera, explicados.</p>
+           </div>
+           
+           <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-xl mb-4">📉</div>
+                    <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">Opción A: Amortizar</h3>
+                    <p class="text-slate-500 leading-relaxed text-xs">
+                        Reduces tu deuda y dejas de pagar intereses al banco. Es una rentabilidad "garantizada" igual al tipo de interés de tu hipoteca (ej: 3.5%).
+                        <br><br>
+                        <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Recomendado si:</span>
+                        <span class="block text-xs font-medium text-slate-700 mt-1">El interés de tu hipoteca es ALTO.</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-xl mb-4">📈</div>
+                    <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">Opción B: Invertir</h3>
+                    <p class="text-slate-500 leading-relaxed text-xs">
+                        Tu dinero crece en cuentas remuneradas o fondos. Si el rendimiento supera el coste de la hipoteca, tu patrimonio neto aumenta más rápido.
+                        <br><br>
+                         <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">Recomendado si:</span>
+                         <span class="block text-xs font-medium text-slate-700 mt-1">Puedes obtener >3% asegurado.</span>
+                    </p>
+                </div>
+           </div>
+        </section>
+
+        <!-- GLOSSARY SECTION (Full Width) -->
+        <div class="relative z-20 mt-10">
+            <Glossary />
+        </div>
+
+        <!-- FAQ SECTION (Full Width) -->
+        <div class="relative z-20 mt-8 mb-0">
+            <FAQ />
+        </div>
+	</main>
+</Layout>

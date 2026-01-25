@@ -1,0 +1,45 @@
+---
+const faqs = [
+    {
+        question: "¿Es mejor reducir cuota o plazo?",
+        answer: "Matemáticamente, **reducir plazo** ahorra muchos más intereses a largo plazo porque el capital se devuelve antes. **Reducir cuota** es recomendable si vas justo a fin de mes y necesitas más liquidez mensual."
+    },
+    {
+        question: "¿Tengo que pagar impuestos por invertir?",
+        answer: "Sí. En España, las rentas del ahorro (intereses de depósitos, letras o fondos) tributan al **19%** para los primeros 6.000€ de beneficio anual. Esta calculadora ya descuenta ese 19% automáticamente para ofrecerte el resultado neto real."
+    },
+    {
+        question: "¿Qué es la amortización anticipada?",
+        answer: "Consiste en devolver parte del dinero que debes al banco antes de tiempo. Esto reduce tu deuda pendiente y, por tanto, los intereses que generarás en el futuro. Puede tener comisiones según tu contrato (máx 0% o 0.15% en hipotecas variables recientes)."
+    },
+    {
+        question: "¿Cuándo compensa invertir en lugar de amortizar?",
+        answer: "Compensa invertir cuando la rentabilidad **neta** (después de impuestos) que te da el banco o fondo es **mayor** que el interés (TAE) que pagas por tu hipoteca. Si tu hipoteca está al 2% y Letras del Tesoro te dan un 3% limpio, ganas dinero invirtiendo."
+    }
+];
+---
+
+<section class="py-12 bg-white border-t border-slate-100">
+    <div class="container mx-auto px-6 max-w-3xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">Preguntas Frecuentes</h2>
+            <p class="text-slate-500">Resolvemos las dudas más comunes sobre hipotecas y ahorro.</p>
+        </div>
+
+        <div class="space-y-4">
+            {faqs.map((faq, index) => (
+                <div class="bg-slate-50 rounded-xl border border-slate-100 overflow-hidden group">
+                    <button class="w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none" onclick={`document.getElementById('faq-${index}').classList.toggle('hidden'); document.getElementById('icon-${index}').classList.toggle('rotate-180')`}>
+                        <span class="font-bold text-slate-800 text-lg">{faq.question}</span>
+                        <svg id={`icon-${index}`} class="w-5 h-5 text-blue-600 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id={`faq-${index}`} class="hidden px-6 pb-6 text-slate-600 leading-relaxed text-sm animate-fade-in">
+                        <p set:html={faq.answer}></p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

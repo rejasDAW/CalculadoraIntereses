@@ -1,0 +1,38 @@
+---
+const terms = [
+    {
+        term: "TIN vs TAE",
+        def: "El TIN (Tipo de Interés Nominal) es el precio pactado con el banco. La **TAE** (Tasa Anual Equivalente) incluye el TIN más comisiones y gastos. Para comparar hipotecas, mira siempre la TAE."
+    },
+    {
+        term: "Amortización",
+        def: "Pago anticipado de parte del capital pendiente de un préstamo. Reduce la deuda y, por tanto, los intereses futuros. Puede ser en reducción de **plazo** (ahorra más) o **cuota** (da aire mensual)."
+    },
+    {
+        term: "Euribor",
+        def: "Índice de referencia europeo al que los bancos se prestan dinero entre sí. La mayoría de hipotecas variables en España son Euribor + Diferencial."
+    },
+    {
+        term: "Interés Compuesto",
+        def: "Es el efecto 'bola de nieve'. Ocurre cuando reinviertes los beneficios de una inversión para que estos a su vez generen nuevos beneficios. Es la clave de la inversión a largo plazo."
+    }
+];
+---
+
+<section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="container mx-auto px-6 max-w-5xl">
+         <div class="flex items-center gap-3 mb-10">
+            <span class="bg-blue-100 text-blue-700 p-2 rounded-lg text-xl">📖</span>
+            <h2 class="text-2xl font-bold text-slate-900 font-heading">Glosario Financiero Rápido</h2>
+         </div>
+         
+         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {terms.map(item => (
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-slate-800 mb-2 border-b border-blue-100 pb-2 inline-block">{item.term}</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium">{item.def}</p>
+                </div>
+            ))}
+         </div>
+    </div>
+</section>

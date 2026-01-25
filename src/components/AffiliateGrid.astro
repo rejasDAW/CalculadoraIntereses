@@ -1,0 +1,85 @@
+---
+const offers = [
+    {
+        name: "MyInvestor Cuenta Remunerada",
+        logo: "/assets/logos/myinvestor.svg",
+        rate: "2,50% TAE",
+        promo: "Primer año (hasta 70.000€)",
+        features: ["Sin condiciones año 1", "Liquidez total", "IBAN Español"],
+        link: "https://myinvestor.es/ (BUSCAR_ENLACE_AFILIADO)", 
+        color: "bg-black"
+    },
+    {
+        name: "Trade Republic",
+        logo: "/assets/logos/traderepublic.svg",
+        rate: "2,25% TAE",
+        promo: "Sobre efectivo (sin límite)",
+        features: ["Interés mensual", "Fondo Garantía Alemán", "Tarjeta Débito"],
+        link: "https://traderepublic.com (TU_ENLACE_IMPACT_AQUI)",
+        color: "bg-gray-900"
+    },
+    {
+        name: "Revolut Cuenta Flexible",
+        logo: "/assets/logos/revolut.svg",
+        rate: "Hasta 2,59% TAE",
+        promo: "Interés diario variable",
+        features: ["Tu banco actual", "Pago diario", "Sin permanencia"],
+        link: "https://revolut.com (TU_ENLACE_APP_AQUI)",
+        color: "bg-blue-600"
+    }
+];
+---
+
+<div id="affiliate-grid" class="max-w-6xl mx-auto py-16 px-4">
+    <div class="text-center mb-12">
+        <h2 class="text-2xl font-bold text-white mb-4">Mejores Opciones para Rentabilizar tus Ahorros</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+            Hemos seleccionado las entidades con mayor solvencia y mejores tipos de interés del mercado español actual.
+            <span class="text-emerald-400 font-bold">Rentabilidad garantizada sin riesgo.</span>
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+        {offers.map(offer => (
+            <div class="bg-white border border-gray-100 shadow-xl rounded-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col relative overflow-hidden group">
+                <!-- Hover Glow -->
+                <div class={`absolute mb-0 inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none ${offer.color.replace('bg-', 'bg-')}`}></div>
+                <!-- Header -->
+                <div class={`h-2 text-white ${offer.color}`}></div>
+                
+                <div class="p-5 md:p-8 flex-1">
+                    <div class="h-10 md:h-12 mb-4 md:mb-6 flex items-center justify-start">
+                        <img src={offer.logo} alt={offer.name} width="200" height="40" class="h-10 w-auto object-contain max-w-[200px]" loading="lazy" />
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="text-4xl font-mono font-bold text-gray-900 tracking-tight">{offer.rate}</div>
+                        <div class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wide mt-2 px-2 py-1 rounded-sm">{offer.promo}</div>
+                    </div>
+
+                    <ul class="space-y-3 mb-8">
+                        {offer.features.map(feature => (
+                            <li class="flex items-center text-sm text-gray-600 font-medium">
+                                <span class="w-5 h-5 bg-green-500 text-white rounded-full flex items-center justify-center text-[10px] mr-3 shadow-sm">✓</span>
+                                {feature}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                
+                <div class="p-4 bg-gray-50 border-t border-gray-100">
+                    <a href={offer.link} target="_blank" class={`block w-full text-center py-4 text-white font-bold text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform duration-200 shadow-xl relative overflow-hidden group ${offer.color}`}>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                             Abrir Cuenta
+                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        ))}
+    </div>
+    
+    <div class="mt-8 text-center text-xs text-gray-400">
+        * Tipos de interés verificados a fecha 25/01/2026. Algunos enlaces pueden generar comisiones de afiliación que mantienen esta web gratuita.
+    </div>
+</div>
