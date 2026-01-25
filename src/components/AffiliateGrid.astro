@@ -15,7 +15,8 @@ const offers = [
         rate: "2,25% TAE",
         promo: "Sobre efectivo (sin límite)",
         features: ["Interés mensual", "Fondo Garantía Alemán", "Tarjeta Débito"],
-        link: "https://traderepublic.com (TU_ENLACE_IMPACT_AQUI)",
+        link: "#",
+        maintenance: true,
         color: "bg-gray-900"
     },
     {
@@ -68,10 +69,18 @@ const offers = [
                 </div>
                 
                 <div class="p-4 bg-gray-50 border-t border-gray-100">
-                    <a href={offer.link} target="_blank" class={`block w-full text-center py-4 text-white font-bold text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform duration-200 shadow-xl relative overflow-hidden group ${offer.color}`}>
+                    <a href={offer.maintenance ? "#" : offer.link} 
+                       target={offer.maintenance ? "_self" : "_blank"} 
+                       class={`block w-full text-center py-4 text-white font-bold text-sm uppercase tracking-widest relative overflow-hidden ${offer.maintenance ? 'opacity-75 cursor-not-allowed grayscale' : 'hover:scale-[1.02] transition-transform duration-200 shadow-xl group'} ${offer.color}`}>
                         <span class="relative z-10 flex items-center justify-center gap-2">
-                             Abrir Cuenta
-                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                             {offer.maintenance ? (
+                                <span>🚧 En Mantenimiento</span>
+                             ) : (
+                                <>
+                                Abrir Cuenta
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </>
+                             )}
                         </span>
                     </a>
                 </div>
